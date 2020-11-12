@@ -1,0 +1,8 @@
+{
+  "name": "mobile-bass-ionic-example",
+  "integrations": {
+    "cordova": {},
+    "capacitor": {}
+  },
+  "type": "angular"
+}

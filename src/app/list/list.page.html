@@ -1,0 +1,27 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Create User</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-list-header>
+      List Users
+    </ion-list-header>
+    <ion-item  *ngFor="let u of users">
+      <ion-label position="stacked">{{u.name}}</ion-label>
+      <ion-label position="stacked">{{u.city}}</ion-label>
+      <ion-label position="stacked">{{u.age}}</ion-label>
+      <ion-button type="ion-button" (click)="edit(u)" color="primary" expand="block">Edit</ion-button>
+      <ion-button type="ion-button" (click)="delete(u)" color="danger" expand="block">Delete</ion-button>
+    </ion-item>        
+  </ion-list>
+
+  <ion-row>
+    <ion-col>
+      <ion-button type="submit" (click)="back()" color="primary" expand="block">Back</ion-button>
+    </ion-col>
+  </ion-row>
+
+</ion-content>
