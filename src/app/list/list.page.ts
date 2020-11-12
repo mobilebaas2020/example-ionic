@@ -26,6 +26,7 @@ export class ListPage implements OnInit {
     this.usersService.getAll(tableName,pageNumber,totalRecordsPerPage,sortField,filters).then( usersReturn => {
         let data = JSON.parse(usersReturn.data);
         this.users =  data[tableName];
+        console.log(this.users);
         this.page = data['page'];
     })
     .catch(error => {

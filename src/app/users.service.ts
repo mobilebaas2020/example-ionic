@@ -10,7 +10,7 @@ export class UsersService {
 
   private headers = {
     'Content-Type': 'application/json',
-    'MOBILEBAASKEY': 'MTYwNTE5MzQ3OTUxOFRhc2lv'
+    'MOBILEBAASKEY': 'MTYwNTIxNDU2MjQ5OUZyYW5ja'
   };
 
   constructor(private http: HTTP) {}
@@ -39,16 +39,16 @@ export class UsersService {
   getAll(tableName:string,pageNumber: number,totalRecordsPerPage: number, sortField:string,filters:string) {
     let parameters = '?table='+tableName;
     if(pageNumber != null){
-        parameters.concat('&pageNumer='+pageNumber);
+        parameters += '&pageNumer='+pageNumber;
     }
     if(totalRecordsPerPage != null){
-        parameters.concat('&totalRecordsPerPage='+totalRecordsPerPage);
+        parameters += '&totalRecordsPerPage='+totalRecordsPerPage;
     }
     if(sortField != null){
-        parameters.concat('&sortField='+sortField);
+        parameters += '&sortField='+sortField;
     }
     if(filters != null){
-      parameters.concat('&filters='+filters);
+      parameters+= '&filters='+filters;
     }
     return this.http.get(this.API_URL+'/find'+parameters,{},this.headers);
   }
